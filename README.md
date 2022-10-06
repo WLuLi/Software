@@ -11,4 +11,6 @@ vim config.yaml
 python manage.py runserver
 # 启动单元测试
 python manage.py test -f test_basic
+# 启动集成测试
+python manage.py test -f test_api
 ```
