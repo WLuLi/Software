@@ -9,4 +9,6 @@ pip install -r requirements.txt
 vim config.yaml 
 # 启动 flask 应用
 python manage.py runserver
+# 启动单元测试
+python manage.py test -f test_basic
 ```
