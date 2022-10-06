@@ -70,6 +70,7 @@ def add_post():
     except KeyError:
         return jsonify({'message': "bad arguments"}), 400
 
+
 @bp.route('/api/v1/post/<int:postId>', methods=['GET'])
 @swag_from('swagger/post-detail.yml')
 @login_required

@@ -2,9 +2,11 @@ from flask import current_app, url_for
 from app import create_app, db
 from app.models.model import (User)
 
-import unittest, json
+import unittest
+import json
 
 from app.utils.jwt import encrypt_password
+
 
 class APITestCase(unittest.TestCase):
 
@@ -15,7 +17,8 @@ class APITestCase(unittest.TestCase):
         self.app_context.push()
         db.drop_all()
         db.create_all()
-        me = User(username="test", password=encrypt_password(str("test")), nickname="test", mobile="+86.123456789012", magic_number=0, url="https://baidu.com")
+        me = User(username="test", password=encrypt_password(str("test")), nickname="test",
+                  mobile="+86.123456789012", magic_number=0, url="https://baidu.com")
         db.session.add(me)
         db.session.commit()
 
@@ -37,12 +40,11 @@ class APITestCase(unittest.TestCase):
         TODO: 进行登出，检查返回值为成功
         """
 
-
     def test_register(self):
         """
         Example: 使用错误信息进行注册，检查返回值为失败
         """
-        data = {"username":"123", "password": "21321"}
+        data = {"username": "123", "password": "21321"}
 
         response = current_app.test_client().post(
             url_for('user.register_user'),
@@ -61,6 +63,7 @@ class APITestCase(unittest.TestCase):
         """
         TODO: 未登录直接登出
         """
+
 
 if __name__ == '__main__':
     unittest.main()

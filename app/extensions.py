@@ -2,7 +2,6 @@
 """
 Flask 扩展
 """
-import os
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
 

@@ -15,5 +15,6 @@ def get_yaml(key, default=None):
         data = data.get(i, default)
     return data
 
+
 if __name__ == '__main__':
     print(settings)

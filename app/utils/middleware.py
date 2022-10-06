@@ -2,6 +2,7 @@
 from flask import request, g
 from .jwt import verify_jwt
 
+
 def jwt_authentication():
     """
     根据jwt验证用户身份
