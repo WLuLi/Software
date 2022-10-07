@@ -91,17 +91,74 @@ class SeleniumTestCase(unittest.TestCase):
         TODO: 登录后发帖，发帖标题为：Hello World，发帖内容为：你好！
         """
 
+    def test_web_forum(self):
+        """
+        test2: 登录后发帖，发帖标题为：Hello World，发帖内容为：你好！
+        """
+        time.sleep(0.2)
+        self.client.find_element_by_xpath(
+            '//*[@id="root"]/div/div[3]/div/div[1]/div/a').click()
+        self.client.find_element_by_class_name(
+            'MuiInputBase-input').send_keys('Hello World')
+        self.client.find_element_by_name('textarea').send_keys('你好')
+        self.client.find_element_by_xpath(
+            '//*[@id="root"]/div/div[3]/div/div/div[3]/button').click()
+        # time.sleep(3)
+
         """
         TODO: 更新帖子标题为：Hello World！，帖子内容为：你好。
         """
 
+    def test_web_forum_update(self):
         """
-        TODO: 删除刚才发的帖子
+        test3: 更新帖子标题为：Hello World！，帖子内容为：你好。
         """
+        from selenium.webdriver.common.keys import Keys
+        time.sleep(0.2)
+
+        self.client.find_element_by_xpath(
+            '//*[@id="post-main"]/div[2]/span[2]/span/a[1]').click()
+        self.client.find_element_by_class_name(
+            'MuiInputBase-input').send_keys(Keys.CONTROL, 'a', Keys.DELETE)
+        self.client.find_element_by_class_name(
+            'MuiInputBase-input').send_keys('Hello World!')
+        self.client.find_element_by_name('textarea').send_keys(
+            Keys.CONTROL, 'a', Keys.DELETE)
+        self.client.find_element_by_name('textarea').send_keys('你好')
+        self.client.find_element_by_xpath(
+            '//*[@id="root"]/div/div[3]/div/div/div[3]/button').click()
+        # time.sleep(3)
+
+        """
+        TODO: 回复刚才的帖子，回复内容为：你好！
+        """
+
+    def test_web_forum_update_reply(self):
+        """
+        test4: 回复刚才的帖子，回复内容为：你好！
+        """
+        time.sleep(0.2)
+        self.client.find_element_by_xpath(
+            '//*[@id="post-main"]/div[2]/span[2]/span/a[2]').click()
+        self.client.find_element_by_name('textarea').send_keys('你好！')
+        self.client.find_element_by_xpath(
+            '//*[@id="root"]/div/div[3]/div/div/div[3]/button').click()
+        # time.sleep(3)
 
         """
         TODO: 退出登录
         """
+
+    def test_web_forum_update_reply_logout(self):
+        """
+        test5: 退出登录
+        """
+        time.sleep(0.2)
+        self.client.find_element_by_xpath(
+            '//*[@id="root"]/div/header/div/span/a').click()
+        self.client.find_element_by_xpath(
+            '//*[@id="root"]/div/div[3]/div/div[6]/button').click()
+        # time.sleep(3)
 
 
 if __name__ == '__main__':
