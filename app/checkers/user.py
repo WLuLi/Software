@@ -83,6 +83,6 @@ def register_params_check(content):
     # magic_number
     if 'magic_number' not in content.keys():
         content['magic_number'] = 0
-    if int(content['magic_number']) < 0:
+    if content['magic_number'] < 0:
         return 'magic_number', False
     return 'ok', True
