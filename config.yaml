@@ -10,5 +10,5 @@ app:
   HOST: 43.138.62.224
   PORT: 8000
 db:
-  MYSQL: mysql+mysqlconnector://root:2020010971@mysql:3306/thss
-  # MYSQL: sqlite:///dev.db
+  # MYSQL: mysql+mysqlconnector://root:2020010971@mysql:3306/thss
+  MYSQL: sqlite:///dev.db
