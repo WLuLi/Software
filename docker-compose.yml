@@ -49,7 +49,7 @@ services:
     volumes:
       - ./app:/app
       - static-volume:/app/static
-      - ./nginx:app.conf:/etc/nginx/nginx.conf
+      - ./nginx/app.conf:/etc/nginx/nginx.conf
     depends_on:
       - app
     networks:
