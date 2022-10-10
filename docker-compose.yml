@@ -34,7 +34,7 @@ services:
       - TZ=Asia/Shanghai
     networks:
       - db_network
-    commend:
+    command:
       [
         "mysqld",
         "--character-set-server=utf8mb4",
