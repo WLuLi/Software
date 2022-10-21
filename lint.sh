@@ -5,7 +5,7 @@ autopep8 -i -r .
 autoflake -i -r --exclude=.git,__pycache__,venv .
 
 # TODO: add isort here.
-isort --skip=.git,__pycache__,venv.
+isort --skip=.git,__pycache__,venv .
 
 # TODO: add flake8 here.
 flake8 .
